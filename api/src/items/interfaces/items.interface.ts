@@ -1,4 +1,4 @@
-export interface Items{
+export interface Items {
     id?: string;
     name: string;
     description?: string;

@@ -1,8 +1,6 @@
 import * as mongoose from 'mongoose';
-// import * as  from 'bcrypt';
-import bcrypt from 'bcrypt-nodejs';
 
-const userSchema = new mongoose.Schema({
+export const userSchema = new mongoose.Schema({
     name: {
         required: true,
         type: String,
@@ -11,9 +9,10 @@ const userSchema = new mongoose.Schema({
         required: true,
         type: String,
         lowercase: true,
+        duplicate: false,
     },
     password: {
         required: true,
         type: String,
     },
-}, { timestamps: true });
+}, { timestamps: true, createIndexes: true });
